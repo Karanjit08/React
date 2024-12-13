@@ -1,0 +1,26 @@
+{
+  "name": "react_learning",
+  "version": "1.0.0",
+  "description": "This is Karan learning react",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Karanjit08/React.git"
+  },
+  "keywords": [
+    "react",
+    "learning"
+  ],
+  "author": "Karanjit Singh Randhawa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Karanjit08/React/issues"
+  },
+  "homepage": "https://github.com/Karanjit08/React#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}

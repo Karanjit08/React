@@ -14,12 +14,17 @@
 
 <div id="parent">
     <div id="child">
-        <h1>I am h1 tag</h1>
+        <h1>I am an h1 tag</h1>
+        <h2>I am an h2 tag</h2>
+    </div>
+    <div id="chil2">
+        <h3>I am an h3 tag</h3>
+        <h4>I am an h4 tag</h4>
     </div>
 </div>
 
+BELOW IS THE EXAMPLE
 */
-
 
 const parent = React.createElement(
     "div",{id:"parent"},
