@@ -1,3 +1,6 @@
+import React from "react";
+import { createRoot } from 'react-dom/client';
+
 // const heading = React.createElement("h1", {
 //     id: "heading1"
 // }, "Hello World from React!");
@@ -42,6 +45,6 @@ const parent = React.createElement(
     ]
     );
 
-const root = ReactDOM.createRoot(document.querySelector("#parent-container"));
+const root = createRoot(document.querySelector("#parent-container"));
 root.render(parent);
 
