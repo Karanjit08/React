@@ -1,50 +1,87 @@
 import React from "react";
-import { createRoot } from 'react-dom/client';
+import { createRoot } from "react-dom/client";
 
-// const heading = React.createElement("h1", {
-//     id: "heading1"
-// }, "Hello World from React!");
-// const root = ReactDOM.createRoot(document.querySelector("#parent-container"));
-// const firstName = React.createElement("h2", {}, "Karanjit Singh");
-// const firstNameRoot = ReactDOM.createRoot(document.querySelector("#name"));
+//  JSX -> HTML Like Syntax
+
+
+// REACT ELEMENT
+const heading = (
+    <h1 className="heading">
+    This is Heading created using JSX
+    </h1>
+);
+
+// const root = createRoot(document.querySelector("#parent-container"));
 // root.render(heading);
-// firstNameRoot.render(firstName);
+
+
+// REACT FUNCTIONAL COMPONENT
+
+const HeadingComponent1 = () =>{
+    return <h1>This is the heading functional component</h1>
+}
+// OR 
+const HeadingComponent2 = () => <h1>This is the heading functional component</h1>
+// OR
+const HeadingComponent3 = () => (<h1>This is the heading functional component</h1>);
+
+// RENDERING FUNCTIONAL COMPONENT ON TO THE PAGE
+
+// const root = createRoot(document.querySelector("#parent-container"));
+// root.render(<HeadingComponent1 />);
 
 
 
+// USING ONE FUNCTIONAL COMPONENT INSIDE ANOTHER FUNCTIONAL COMPONENT
 
-/* CREATING NESTED HTML STRUCTURE IN REACT 
+const Component1 = () =>{
+    return <h1>This is Title</h1>
+}
 
-<div id="parent">
-    <div id="child">
-        <h1>I am an h1 tag</h1>
-        <h2>I am an h2 tag</h2>
+const Component2 = () => {
+    return <div>
+        < Component1 />
+        <i>This is heading</i>
     </div>
-    <div id="chil2">
-        <h3>I am an h3 tag</h3>
-        <h4>I am an h4 tag</h4>
+}
+
+// const root = createRoot(document.querySelector("#parent-container"));
+// root.render(< Component2 />);
+
+
+// WRITING JAVASCRIPT INSIDE THE JSX
+
+const Calculate = () =>( <i>This is bold</i>);
+const Component3 = () =>{
+    return <div>
+        {Calculate()}
+
+        {/* // JAVASCRIPT FUNCTION CAN ALSO BE RENDERED AS SAME AS WE RENDER COMPONENTS IN THE BELOW LINE 60 CODE*/}
+        <Calculate />
+        <h1>This is new</h1>
     </div>
-</div>
-
-BELOW IS THE EXAMPLE
-*/
-
-const parent = React.createElement(
-    "div",{id:"parent"},
-    [
-        React.createElement(
-            "div",{id:"child"},[
-                React.createElement("h1",{},"I h1 tag"),
-                React.createElement("h2",{},"I h2 tag")
-            ]),
-        React.createElement(
-                "div",{id:"chil2"},[
-                    React.createElement("h3",{},"I am h3 tag"),
-                    React.createElement("h4",{},"I am h4 tag")
-            ])
-    ]
-    );
+}
 
 const root = createRoot(document.querySelector("#parent-container"));
-root.render(parent);
+root.render(< Component3 />);
+
+
+// PUTTING REACT ELEMENT (JSX) INSIDE A COMPONENT
+
+
+const reactElement = 
+    <h1 className="heading">
+    This is Heading created using JSX
+    </h1>
+
+
+const Component4 = () =>{
+    return <div>
+        {reactElement}
+        <h1>This is h1 tag</h1>
+    </div>
+}
+
+// const root = createRoot(document.querySelector("#parent-container"));
+// root.render(<Component4 />);
 
