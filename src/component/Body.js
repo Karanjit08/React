@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import resList from "../utils/mockData";
 import RestaurantCard from './RestaurantCard';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
 
@@ -50,7 +50,25 @@ var restaurantListJS = [
 var Body = () => {
 
     // STATE VARIABLE IN REACT
-    var [restaurantList, setRestaurantList] = useState(resList);
+    var [restaurantList, setRestaurantList] = useState([]);
+
+    useEffect(() => {
+        console.log("Use Effect Called");
+        fetchData();
+    },[]);
+
+
+    var fetchData = async() =>{
+        console.log('Fetching Data...');
+        var response = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.627597&lng=73.74549&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+
+        var data = await response.json();
+        console.log(data.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
+        setRestaurantList(data.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
+    }
+
+
+    
     return (
     <div className="body">
         <div className="search-container">
@@ -73,6 +91,7 @@ var Body = () => {
         </div>
         <div className="res-cards-container">
           {
+            restaurantList.length === 0 ? <h3>Loading...</h3>:
             restaurantList.map((restaurant) => <RestaurantCard key={restaurant.info.id} resData = {restaurant} />)
           }
         </div>

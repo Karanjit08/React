@@ -1,99 +1,99 @@
 var resList = [
-    {
-    "info": {
-    "id": "36014",
-    "name": "Subway",
-    "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/12/9/ec733942-4589-44d4-a543-64e83c412f72_36014.JPG",
-    "locality": "KAILASH HOTEL",
-    "areaName": "Tathawade",
-    "costForTwo": "₹350 for two",
-    "cuisines": [
-    "sandwich",
-    "Salads",
-    "wrap",
-    "Healthy Food"
-    ],
-    "avgRating": 4,
-    "parentId": "2",
-    "avgRatingString": "4.0",
-    "totalRatingsString": "11K+",
-    "sla": {
-    "deliveryTime": 22,
-    "lastMileTravel": 1.8,
-    "serviceability": "SERVICEABLE",
-    "slaString": "20-25 mins",
-    "lastMileTravelString": "1.8 km",
-    "iconType": "ICON_TYPE_EMPTY"
-    },
-    "availability": {
-    "nextCloseTime": "2024-12-26 23:59:00",
-    "opened": true
-    },
-    "badges": {
-    "imageBadges": [
-    {
-    "imageId": "bolt/Bolt%20Listing%20badge@3x.png",
-    "description": "bolt!"
-    }
-    ]
-    },
-    "isOpen": true,
-    "type": "F",
-    "badgesV2": {
-    "entityBadges": {
-    "imageBased": {
-    "badgeObject": [
-    {
-    "attributes": {
-    "description": "bolt!",
-    "imageId": "bolt/Bolt%20Listing%20badge@3x.png"
-    }
-    }
-    ]
-    },
-    "textBased": {},
-    "textExtendedBadges": {}
-    }
-    },
-    "aggregatedDiscountInfoV3": {
-    "header": "₹175 OFF",
-    "subHeader": "ABOVE ₹349",
-    "discountTag": "FLAT DEAL"
-    },
-    "orderabilityCommunication": {
-    "title": {},
-    "subTitle": {},
-    "message": {},
-    "customIcon": {}
-    },
-    "differentiatedUi": {
-    "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-    "differentiatedUiMediaDetails": {
-    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-    "lottie": {},
-    "video": {}
-    }
-    },
-    "reviewsSummary": {},
-    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-    "restaurantOfferPresentationInfo": {},
-    "externalRatings": {
-    "aggregatedRating": {
-    "rating": "--"
-    }
-    },
-    "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
-    },
-    "analytics": {
-    "context": "seo-data-f01f923b-ae84-4437-a552-0b00195c98c2"
-    },
-    "cta": {
-    "link": "https://www.swiggy.com/city/pune/subway-kailash-hotel-tathawade-rest36014",
-    "text": "RESTAURANT_MENU",
-    "type": "WEBLINK"
-    },
-    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
-    },
+    // {
+    // "info": {
+    // "id": "36014",
+    // "name": "Subway",
+    // "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/12/9/ec733942-4589-44d4-a543-64e83c412f72_36014.JPG",
+    // "locality": "KAILASH HOTEL",
+    // "areaName": "Tathawade",
+    // "costForTwo": "₹350 for two",
+    // "cuisines": [
+    // "sandwich",
+    // "Salads",
+    // "wrap",
+    // "Healthy Food"
+    // ],
+    // "avgRating": 4,
+    // "parentId": "2",
+    // "avgRatingString": "4.0",
+    // "totalRatingsString": "11K+",
+    // "sla": {
+    // "deliveryTime": 22,
+    // "lastMileTravel": 1.8,
+    // "serviceability": "SERVICEABLE",
+    // "slaString": "20-25 mins",
+    // "lastMileTravelString": "1.8 km",
+    // "iconType": "ICON_TYPE_EMPTY"
+    // },
+    // "availability": {
+    // "nextCloseTime": "2024-12-26 23:59:00",
+    // "opened": true
+    // },
+    // "badges": {
+    // "imageBadges": [
+    // {
+    // "imageId": "bolt/Bolt%20Listing%20badge@3x.png",
+    // "description": "bolt!"
+    // }
+    // ]
+    // },
+    // "isOpen": true,
+    // "type": "F",
+    // "badgesV2": {
+    // "entityBadges": {
+    // "imageBased": {
+    // "badgeObject": [
+    // {
+    // "attributes": {
+    // "description": "bolt!",
+    // "imageId": "bolt/Bolt%20Listing%20badge@3x.png"
+    // }
+    // }
+    // ]
+    // },
+    // "textBased": {},
+    // "textExtendedBadges": {}
+    // }
+    // },
+    // "aggregatedDiscountInfoV3": {
+    // "header": "₹175 OFF",
+    // "subHeader": "ABOVE ₹349",
+    // "discountTag": "FLAT DEAL"
+    // },
+    // "orderabilityCommunication": {
+    // "title": {},
+    // "subTitle": {},
+    // "message": {},
+    // "customIcon": {}
+    // },
+    // "differentiatedUi": {
+    // "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+    // "differentiatedUiMediaDetails": {
+    // "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+    // "lottie": {},
+    // "video": {}
+    // }
+    // },
+    // "reviewsSummary": {},
+    // "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    // "restaurantOfferPresentationInfo": {},
+    // "externalRatings": {
+    // "aggregatedRating": {
+    // "rating": "--"
+    // }
+    // },
+    // "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+    // },
+    // "analytics": {
+    // "context": "seo-data-f01f923b-ae84-4437-a552-0b00195c98c2"
+    // },
+    // "cta": {
+    // "link": "https://www.swiggy.com/city/pune/subway-kailash-hotel-tathawade-rest36014",
+    // "text": "RESTAURANT_MENU",
+    // "type": "WEBLINK"
+    // },
+    // "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+    // },
     {
     "info": {
     "id": "25845",
