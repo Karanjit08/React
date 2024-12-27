@@ -67,6 +67,12 @@
     cursor: pointer; /* Optional: Add pointer cursor */
 }
 
+.res-filter-btn{
+    padding: 8px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
 .res-cards-container{
     display: flex;
     flex-wrap: wrap;
