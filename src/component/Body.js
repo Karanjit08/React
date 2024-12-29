@@ -48,9 +48,14 @@ var restaurantListJS = [
 
 
 var Body = () => {
+    console.log('Body called');
 
     // STATE VARIABLE IN REACT
     var [restaurantList, setRestaurantList] = useState([]);
+
+    const [searchRestaurantList, setSearchRestaurantList] = useState([]);
+
+    var [searchText,setSearchText] = useState("");
 
     useEffect(() => {
         console.log("Use Effect Called");
@@ -65,6 +70,8 @@ var Body = () => {
         var data = await response.json();
         console.log(data.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
         setRestaurantList(data.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
+
+        setSearchRestaurantList(data.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
     }
 
 
@@ -75,9 +82,22 @@ var Body = () => {
             <div className="search-bar">
             <input id="searchbar" 
                type="text" name="search" 
-               placeholder="Search foods.."></input>
+               placeholder="Search foods.."
+               value={searchText}
+               onChange={(e) =>{
+                setSearchText(e.target.value);
+               }}
+               ></input>
             </div>
-            <div className="search-icon">
+            <div className="search-icon" onClick={() =>{
+                console.log("Searching...")
+                console.log(searchText);
+                const filteredList = restaurantList.filter((items) =>
+                    items.info.name.includes(searchText)
+                );
+                console.log(filteredList);
+                setSearchRestaurantList(filteredList);
+            }}>
             <FontAwesomeIcon icon= {faSearch} />
             </div>
             <button className="res-filter-btn" onClick={() =>{
@@ -91,8 +111,8 @@ var Body = () => {
         </div>
         <div className="res-cards-container">
           {
-            restaurantList.length === 0 ? <h3>Loading...</h3>:
-            restaurantList.map((restaurant) => <RestaurantCard key={restaurant.info.id} resData = {restaurant} />)
+            searchRestaurantList.length === 0 ? <h3>Loading...</h3>:
+            searchRestaurantList.map((restaurant) => <RestaurantCard key={restaurant.info.id} resData = {restaurant} />)
           }
         </div>
 
