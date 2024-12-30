@@ -3,6 +3,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import resList from "../utils/mockData";
 import RestaurantCard from './RestaurantCard';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router';
 
 
 
@@ -112,7 +113,10 @@ var Body = () => {
         <div className="res-cards-container">
           {
             searchRestaurantList.length === 0 ? <h3>Loading...</h3>:
-            searchRestaurantList.map((restaurant) => <RestaurantCard key={restaurant.info.id} resData = {restaurant} />)
+            searchRestaurantList.map((restaurant) => <Link to= {`/restaurants/${restaurant.info.id}`}>
+            <RestaurantCard key={restaurant.info.id} resData = {restaurant} />
+            </Link>
+            )
           }
         </div>
 
