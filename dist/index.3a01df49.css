@@ -115,6 +115,41 @@
   display: flex;
 }
 
+.menu-container {
+  background-color: #f5f5f5;
+  justify-content: center;
+  width: 100%;
+  display: flex;
+}
+
+.menu-card {
+  background-color: #fff;
+  border-radius: 12px;
+  width: 50%;
+  margin-top: 8px;
+  transition: transform .3s, box-shadow .3s;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 4px 8px #0000001a;
+}
+
+.menu-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px #0003;
+}
+
+.menu-img {
+  object-fit: cover;
+  border-radius: 12px;
+  width: 30%;
+}
+
+.menu-content {
+  width: 70%;
+  height: 40%;
+  padding-left: 8px;
+}
+
 .footer {
   background-color: #dcdcdc;
   height: 30vh;

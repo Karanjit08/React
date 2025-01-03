@@ -123,6 +123,38 @@
 
 
 
+/*  RESTAURANT MENU CARDS */
+.menu-container{
+    width: 100%;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+}
+.menu-card{
+    display: flex;
+    margin-top: 8px;
+    width: 50%;
+    background-color: white;
+    border-radius: 12px; /* Optional, for rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    overflow: hidden;
+}
+.menu-card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+  }
+
+.menu-img{
+    width: 30%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+.menu-content{
+    width: 70%;
+    height: 40%;
+    padding-left: 8px;
+}
 
 
 
