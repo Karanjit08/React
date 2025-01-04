@@ -150,6 +150,18 @@
   padding-left: 8px;
 }
 
+.user-card {
+  border: 2px solid #000;
+  width: 30vw;
+  margin: 10px;
+  padding: 4px;
+}
+
+.user-card > img {
+  object-fit: cover;
+  width: 30vw;
+}
+
 .footer {
   background-color: #dcdcdc;
   height: 30vh;
