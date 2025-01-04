@@ -4,6 +4,7 @@ import resList from "../utils/mockData";
 import RestaurantCard from './RestaurantCard';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
+import useOnlineStatus from '../utils/useOnlineStatus';
 
 
 
@@ -75,6 +76,11 @@ var Body = () => {
         setSearchRestaurantList(data.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
     }
 
+    var onlineStatus = useOnlineStatus();
+
+    if(onlineStatus === false){
+        return <h1>Please check your Internet Connection :((</h1>
+    }
 
     
     return (
