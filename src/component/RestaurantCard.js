@@ -9,10 +9,10 @@ var RestaurantCard = (props) =>{
   // This below line 34 means DESTRUCTURING THE API DATA
   var {cloudinaryImageId, name, avgRating, cuisines} = resData.info;
   return (
-    <div className="res-card">
-    <img className="res-card-image" src={`${baseImageURL}${cloudinaryImageId}`}></img>
+    <div className="w-[280px] h-[300px] bg-body   overflow-hidden rounded-xl shadow-custom transition-transform-shadow duration-300 ease-default hover:scale-105 hover:shadow-hover ">
+    <img className="w-[100%] h-[60%] object-cover rounded-xl" src={`${baseImageURL}${cloudinaryImageId}`}></img>
 
-    <div className="res-card-content">
+    <div className="w-[100%] h-[40%]  text-left font-sans p-[16px]">
       <h3>{name}</h3>
       <FontAwesomeIcon icon= {faStar} /> {avgRating}
       <h4>{cuisines}</h4>

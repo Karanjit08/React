@@ -15,20 +15,20 @@ var Header = () => {
   console.log("Header Rendered");
 
   return (
-    <div className="header">
-      <div className="header-left">
+    <div className="h-[15vh] w-screen bg-blue-400 flex justify-between items-center">
+      <div>
         <Link to={"/"}>
         <img
           src= {logo}
         ></img>
         </Link>
       </div>
-      <div className="header-right">
-        <a><Link to={"/"}>Home</Link></a>
-        <a><Link to={"/about"}>About</Link></a>
-        <a><Link to={"/contact"}>Contact Us</Link></a>
-        <a>Cart</a>
-        <button className='login-btn' onClick={() =>{
+      <div className="w-[50vw] gap-[20] flex justify-evenly">
+        <a className="text-[20px] font-normal "><Link to={"/"}>Home</Link></a>
+        <a  className="text-[20px] font-normal "><Link to={"/about"}>About</Link></a>
+        <a  className="text-[20px] font-normal "><Link to={"/contact"}>Contact Us</Link></a>
+        <a  className="text-[20px] font-normal ">Cart</a>
+        <button className="py-0 px-3 cursor-pointer rounded-xl text-[20px] font-normal" onClick={() =>{
           console.log('Clicked...');
           setButtonText((prevText) => prevText == "Login" ? "Log Out" : "Login");
         }}>{buttonText}</button>

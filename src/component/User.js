@@ -5,7 +5,7 @@ var User = (props) => {
 
     var [count,setCount] = useState(0);
     return (
-        <div className="user-card">
+        <div className="w-[30vw] m-[10px] p-[4px] border-2 border-black">
             <h3>Name: {props.name}</h3>
             <h3>Count: {count}</h3>
             <h3>Location: Pune</h3>

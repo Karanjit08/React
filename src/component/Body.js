@@ -84,10 +84,12 @@ var Body = () => {
 
     
     return (
-    <div className="body">
-        <div className="search-container">
-            <div className="search-bar">
-            <input id="searchbar" 
+    <div className="h-[120vh] bg-body ">
+        <div className="w-[100vw] h-[15vh] flex justify-center items-center gap-[20] ">
+            <div className="w-[40vw] h-[8vh] rounded-xl flex  justify-around">
+            <input 
+            className='w-[100%] h-[100%] rounded-xl py-0 px-[10px] text-[20px]  border-none outline-none'
+            id="searchbar" 
                type="text" name="search" 
                placeholder="Search foods.."
                value={searchText}
@@ -96,7 +98,7 @@ var Body = () => {
                }}
                ></input>
             </div>
-            <div className="search-icon" onClick={() =>{
+            <div className="  text-[24px] cursor-pointer" onClick={() =>{
                 console.log("Searching...")
                 console.log(searchText);
                 const filteredList = restaurantList.filter((items) =>
@@ -107,7 +109,7 @@ var Body = () => {
             }}>
             <FontAwesomeIcon icon= {faSearch} />
             </div>
-            <button className="res-filter-btn" onClick={() =>{
+            <button className="p-[8px] rounded-xl  cursor-pointer" onClick={() =>{
                 console.log('Button Clicked');
                 restaurantList = restaurantList.filter((items) => 
                     items.info.avgRating > 4
@@ -116,7 +118,7 @@ var Body = () => {
               
             }}> Top Rated Restaurants</button>
         </div>
-        <div className="res-cards-container">
+        <div className="flex flex-wrap justify-center gap-[20px]">
           {
             searchRestaurantList.length === 0 ? <h3>Loading...</h3>:
             searchRestaurantList.map((restaurant) => <Link to= {`/restaurants/${restaurant.info.id}`}>

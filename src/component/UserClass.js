@@ -29,8 +29,8 @@ class UserClass extends React.Component{
     
 
     render() {
-        return <div className="user-card">
-        <img src={this.state.info.avatar_url}></img>
+        return <div className="w-[30vw] m-[10px] p-[4px] border-2 border-black">
+        <img className="w-[30vw] object-cover" src={this.state.info.avatar_url}></img>
          <h3>Name: {this.state.info.name}</h3>
             <h3>Location: {this.state.info.location}</h3>
             <h4>Bio: {this.state.info.bio}</h4>

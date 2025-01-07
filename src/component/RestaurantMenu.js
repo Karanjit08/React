@@ -35,9 +35,9 @@ var RestaurantMenu = () => {
 var MenuCard = (props) => {
   var { menuData } = props;
   return (
-    <div className="menu-container">
-      <div className="menu-card">
-      <div className="menu-content">
+    <div className="w-[100%] bg-body flex justify-center">
+      <div className="flex mt-[8px] w-[50%] bg-white rounded-xl shadow-custom transition-transform-shadow duration-300 ease-default hover:scale-105 hover:shadow-hover overflow-hidden   ">
+      <div className="w-[70%] h-[40%] pl-[8px]">
           <h3>{menuData.card.info.name}</h3>
           <h4>{menuData.card.info.category}</h4>
           <FontAwesomeIcon icon= {faStar} /> {menuData.card.info.ratings.aggregatedRating.rating}
@@ -45,7 +45,7 @@ var MenuCard = (props) => {
           <h4>{menuData.card.info.description}</h4>
         </div>
         <img
-          className="menu-img"
+          className="w-[30%] object-cover rounded-xl"
           src={`${baseImageURL}${menuData.card.info.imageId}`}
         ></img>
       </div>
