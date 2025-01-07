@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import resList from "../utils/mockData";
-import RestaurantCard from './RestaurantCard';
+import RestaurantCard, {promotedRestaurantCard} from './RestaurantCard';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import useOnlineStatus from '../utils/useOnlineStatus';
@@ -58,6 +58,8 @@ var Body = () => {
     const [searchRestaurantList, setSearchRestaurantList] = useState([]);
 
     var [searchText,setSearchText] = useState("");
+
+    var PromotedRestaurantCardContainer = promotedRestaurantCard(RestaurantCard);
 
     useEffect(() => {
         console.log("Use Effect Called");
@@ -122,7 +124,8 @@ var Body = () => {
           {
             searchRestaurantList.length === 0 ? <h3>Loading...</h3>:
             searchRestaurantList.map((restaurant) => <Link to= {`/restaurants/${restaurant.info.id}`}>
-            <RestaurantCard key={restaurant.info.id} resData = {restaurant} />
+            {restaurant.info.avgRating > 4.1 ? <PromotedRestaurantCardContainer  key={restaurant.info.id} resData = {restaurant} />
+             : <RestaurantCard key={restaurant.info.id} resData = {restaurant} />}
             </Link>
             )
           }
