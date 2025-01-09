@@ -26,16 +26,14 @@ var useRestaurantMenu = (resId) => {
         var data = await response.json();
     
         // console.log(data.data.cards);
-        console.log(
-          data.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[2].card.card
-            .itemCards
-        );
+        // console.log(
+        //   data.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[2].card.card
+        //     .itemCards
+        // );
+        console.log(data.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards);
     
         // setResMenu(data.data.cards);
-        setResMenu(
-          data.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[2].card.card
-            .itemCards
-        );
+        setResMenu(data.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards);
       }
 
     // STEP 4  

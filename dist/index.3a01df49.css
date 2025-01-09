@@ -252,6 +252,10 @@ img, video {
   margin: 10px;
 }
 
+.m-1 {
+  margin: .25rem;
+}
+
 .mb-1 {
   margin-bottom: .25rem;
 }
@@ -260,12 +264,20 @@ img, video {
   margin-top: 8px;
 }
 
+.mb-2 {
+  margin-bottom: .5rem;
+}
+
 .flex {
   display: flex;
 }
 
 .h-\[100\%\] {
   height: 100%;
+}
+
+.h-\[100px\] {
+  height: 100px;
 }
 
 .h-\[120vh\] {
@@ -290,6 +302,18 @@ img, video {
 
 .h-\[8vh\] {
   height: 8vh;
+}
+
+.h-\[50px\] {
+  height: 50px;
+}
+
+.max-h-0 {
+  max-height: 0;
+}
+
+.max-h-\[500px\] {
+  max-height: 500px;
 }
 
 .w-\[100\%\] {
@@ -336,6 +360,10 @@ img, video {
   cursor: pointer;
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
 .flex-wrap {
   flex-wrap: wrap;
 }
@@ -376,8 +404,31 @@ img, video {
   border-width: 2px;
 }
 
+.border-4 {
+  border-width: 4px;
+}
+
+.border-solid {
+  border-style: solid;
+}
+
 .border-none {
   border-style: none;
+}
+
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
+}
+
+.border-accordianSelect {
+  --tw-border-opacity: 1;
+  border-color: rgb(204 204 204 / var(--tw-border-opacity, 1));
+}
+
+.bg-accordian {
+  --tw-bg-opacity: 1;
+  background-color: rgb(238 238 238 / var(--tw-bg-opacity, 1));
 }
 
 .bg-body {
@@ -399,6 +450,18 @@ img, video {
 
 .p-\[8px\] {
   padding: 8px;
+}
+
+.p-1 {
+  padding: .25rem;
+}
+
+.p-2 {
+  padding: .5rem;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .px-3 {
@@ -424,6 +487,10 @@ img, video {
   text-align: left;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .font-sans {
   font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
@@ -441,12 +508,25 @@ img, video {
   line-height: 1.25rem;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
 
 .font-normal {
   font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
 }
 
 .shadow-custom {
@@ -477,6 +557,10 @@ img, video {
   --tw-scale-x: 1.05;
   --tw-scale-y: 1.05;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
 }
 
 .hover\:shadow-hover:hover {

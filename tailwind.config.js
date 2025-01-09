@@ -6,7 +6,10 @@ module.exports = {
   theme: {
     extend: {},
     colors: {
-      'body' : '#F5f5f5'
+      'body' : '#F5f5f5',
+      'accordian': '#eee',
+      'accordianSelect': '#ccc',
+      'black': '#000000'
     },
     boxShadow: {
       'custom': '0 4px 8px rgba(0, 0, 0, 0.1)',
