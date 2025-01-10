@@ -364,6 +364,10 @@ img, video {
   width: 100vw;
 }
 
+.w-\[10vw\] {
+  width: 10vw;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -473,6 +477,10 @@ img, video {
   padding: 8px;
 }
 
+.p-1 {
+  padding: .25rem;
+}
+
 .px-3 {
   padding-left: .75rem;
   padding-right: .75rem;
@@ -541,6 +549,10 @@ img, video {
 
 .font-normal {
   font-weight: 400;
+}
+
+.font-extrabold {
+  font-weight: 800;
 }
 
 .text-green {

@@ -1,11 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import logo from '../../assets/images/header_logo.jpg';
 import { Link } from 'react-router';
+import UserContext from '../utils/UserContext';
 
 var Header = () => {
 
 
   var [buttonText, setButtonText] = useState("Login");
+
+  var data = useContext(UserContext);
 
 
   useEffect(() =>{
@@ -32,6 +35,7 @@ var Header = () => {
           console.log('Clicked...');
           setButtonText((prevText) => prevText == "Login" ? "Log Out" : "Login");
         }}>{buttonText}</button>
+           <a className="text-[20px] font-extrabold  "><Link to={"/"}>{data.loggedInUser}</Link></a>
       </div>
     </div>
   );

@@ -2,10 +2,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import resList from "../utils/mockData";
 import RestaurantCard, {promotedRestaurantCard} from './RestaurantCard';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import useOnlineStatus from '../utils/useOnlineStatus';
-
+import UserContext from '../utils/UserContext';
 
 
 
@@ -60,6 +60,8 @@ var Body = () => {
     var [searchText,setSearchText] = useState("");
 
     var PromotedRestaurantCardContainer = promotedRestaurantCard(RestaurantCard);
+
+    var data = useContext(UserContext);
 
     useEffect(() => {
         console.log("Use Effect Called");
@@ -119,6 +121,16 @@ var Body = () => {
                 setRestaurantList(restaurantList);
               
             }}> Top Rated Restaurants</button>
+                <input className='border border-black p-1' 
+                value={data.loggedInUser}
+                onChange={(e) => {
+                    data.setUserName(e.target.value)
+                }}
+                >
+
+                </input>
+
+           
         </div>
         <div className="flex flex-wrap justify-center gap-[20px]">
           {
