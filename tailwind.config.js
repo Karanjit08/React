@@ -9,7 +9,9 @@ module.exports = {
       'body' : '#F5f5f5',
       'accordian': '#eee',
       'accordianSelect': '#ccc',
-      'black': '#000000'
+      'black': '#000000',
+      'white' : '#ffffff',
+      'green' : '#33ff7A'
     },
     boxShadow: {
       'custom': '0 4px 8px rgba(0, 0, 0, 0.1)',

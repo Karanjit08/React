@@ -9,7 +9,9 @@ var RestaurantMenu = () => {
   var { resId } = useParams();
 
   var resMenu = useRestaurantMenu(resId);
- 
+
+  var [activeAccordion, setActiveAccordion] = useState(null);
+  
 
   return (
     <div className="res-menu-container">
@@ -37,7 +39,10 @@ var RestaurantMenu = () => {
               menu.card?.card?.["@type"] ==
               "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
             ) {
-              return <MenuDropDownCard key={index} menuData={menu} />;
+              return <MenuDropDownCard key={index} menuData={menu}
+              isOpen={activeAccordion === index} 
+              onClick={() => setActiveAccordion(activeAccordion === index ? null : index)} 
+               />;
             }
           }
         })
@@ -67,35 +72,52 @@ var RestaurantMenu = () => {
 //   );
 // };
 
-var MenuDropDownCard = (props) => {
-  var [isOpen, setIsOpen] = useState(false);
-  var { menuData } = props;
+var MenuDropDownCard = ({ menuData, isOpen, onClick }) => {
+ 
   return (
     <div className="w-[100%] flex items-center  flex-col ">
-
-     {/* ACCORDIAN HEADER */}
-      <div className="w-[50%] h-[50px] bg-accordian rounded-xl m-1 flex justify-between p-4 items-center hover:cursor-pointer" onClick={() => {
-        setIsOpen(!isOpen);
-      }}>
+      {/* ACCORDIAN HEADER */}
+      <div
+        className="w-[50%] h-[50px] bg-accordian rounded-xl m-1 flex justify-between p-4 items-center hover:cursor-pointer"
+        onClick={onClick}
+      >
         <h2 className="font-bold text-lg ">
           {menuData.card.card.title} ({menuData.card.card.itemCards.length})
         </h2>
         <h2>{isOpen ? "▲" : "▼"}</h2>
       </div>
-      {/* ACCORDIAN BODY    */}     
+      {/* ACCORDIAN BODY    */}
       {isOpen && (
-        <div className="w-[50%] bg-white p-4 rounded-xl shadow-md border-solid border-2 border-accordianSelect">
+        <div className="w-[50%] bg-white p-4 rounded-xl shadow-md">
           {menuData.card.card.itemCards.map((item, index) => (
-            <div key={index} className="mb-2">
-              <h3 className="font-medium">{item.card.info.name}</h3>
-              <p className="text-sm text-gray-600">{item.card.info.description}</p>
+            <div key={index} className="mb-2 border-accordianSelect border-b-2 flex justify-between">
+              <div className="w-[40%]">
+                <h3 className="font-medium">{item.card.info.name}</h3>
+                <h4 className="font-light  ">
+                  {item.card.info.variantsV2?.variantGroups?.[1]
+                    ?.variations?.[0]?.price
+                    ? `₹${item.card.info.variantsV2.variantGroups[1].variations[0].price}`
+                    : "Price not available"}
+                </h4>
+                <h4 className="font-light  ">{item.card.info.category}</h4>
+                <p className="font-light  text-sm text-gray-600">
+                  {item.card.info.description}
+                </p>
+              </div>
+                <div className="w-[30%] relative">
+                <img className=" object-cover rounded-xl pb-4 " src={`${baseImageURL}${item.card.info.imageId}`}></img>
+                <button className="absolute bottom-4 left-[75px]      px-3 bg-white  py-1 rounded-md text-green shadow hover:bg-accordianSelect border border-accordianSelect" onClick={ () => {
+                  console.log(`${item.card.info.name} Button Clicked`);
+                }}>
+                  ADD
+                </button>
+                </div>
             </div>
           ))}
         </div>
-      )
-      }
+      )}
 
-         {/* Used conditional rendering ({isOpen && ...}) to display the content when isOpen is true. */}
+      {/* Used conditional rendering ({isOpen && ...}) to display the content when isOpen is true. */}
     </div>
   );
 };
