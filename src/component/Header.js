@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import logo from '../../assets/images/header_logo.jpg';
 import { Link } from 'react-router';
 import UserContext from '../utils/UserContext';
+import { useSelector } from 'react-redux';
 
 var Header = () => {
 
@@ -9,6 +10,8 @@ var Header = () => {
   var [buttonText, setButtonText] = useState("Login");
 
   var data = useContext(UserContext);
+
+  var cartItems = useSelector((store) => store.cart.items)
 
 
   useEffect(() =>{
@@ -30,7 +33,7 @@ var Header = () => {
         <a className="text-[20px] font-normal "><Link to={"/"}>Home</Link></a>
         <a  className="text-[20px] font-normal "><Link to={"/about"}>About</Link></a>
         <a  className="text-[20px] font-normal "><Link to={"/contact"}>Contact Us</Link></a>
-        <a  className="text-[20px] font-normal ">Cart</a>
+        <a  className="text-[20px] font-normal ">Cart - ({cartItems.length} Items)</a>
         <button className="py-0 px-3 cursor-pointer rounded-xl text-[20px] font-normal" onClick={() =>{
           console.log('Clicked...');
           setButtonText((prevText) => prevText == "Login" ? "Log Out" : "Login");

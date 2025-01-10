@@ -364,10 +364,6 @@ img, video {
   width: 100vw;
 }
 
-.w-\[10vw\] {
-  width: 10vw;
-}
-
 .cursor-pointer {
   cursor: pointer;
 }
@@ -461,6 +457,10 @@ img, video {
   object-fit: cover;
 }
 
+.p-1 {
+  padding: .25rem;
+}
+
 .p-4 {
   padding: 1rem;
 }
@@ -475,10 +475,6 @@ img, video {
 
 .p-\[8px\] {
   padding: 8px;
-}
-
-.p-1 {
-  padding: .25rem;
 }
 
 .px-3 {
@@ -539,6 +535,10 @@ img, video {
   font-weight: 700;
 }
 
+.font-extrabold {
+  font-weight: 800;
+}
+
 .font-light {
   font-weight: 300;
 }
@@ -549,10 +549,6 @@ img, video {
 
 .font-normal {
   font-weight: 400;
-}
-
-.font-extrabold {
-  font-weight: 800;
 }
 
 .text-green {

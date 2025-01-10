@@ -9,6 +9,8 @@ import Contact from "./component/Contact.js";
 import Error from "./component/Error.js";
 import RestaurantMenu from "./component/RestaurantMenu.js";
 import UserContext from "./utils/UserContext.js";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore.js";
 
 // LAZY LOADING FOR ABOUT US COMPONENT WHICH MAKES THE REACT APP OPTIMISED in line 15,41. Only 2 lines of code. This will make the app high performance
 
@@ -25,6 +27,7 @@ var AppLayout = () => {
   }, []);
 
   return (
+    <Provider store={appStore}>  
     <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
       <div className="app-layout">
         <Header />
@@ -32,6 +35,7 @@ var AppLayout = () => {
         {/* <Footer /> */}
       </div>
     </UserContext.Provider>
+    </Provider>
   );
 };
 
