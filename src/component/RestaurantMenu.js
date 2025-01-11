@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 var RestaurantMenu = () => {
   var { resId } = useParams();
@@ -73,6 +75,13 @@ var RestaurantMenu = () => {
 // };
 
 var MenuDropDownCard = ({ menuData, isOpen, onClick }) => {
+
+  // DISPATCHING THE ACTION AND ADDING THE ITEMS
+  var dispatch = useDispatch();
+  var handleClick = (itemName) => {
+    console.log(itemName)
+    dispatch(addItem(itemName));
+  }
  
   return (
     <div className="w-[100%] flex items-center  flex-col ">
@@ -107,7 +116,8 @@ var MenuDropDownCard = ({ menuData, isOpen, onClick }) => {
                 <div className="w-[30%] relative">
                 <img className=" object-cover rounded-xl pb-4 " src={`${baseImageURL}${item.card.info.imageId}`}></img>
                 <button className="absolute bottom-4 left-[75px]      px-3 bg-white  py-1 rounded-md text-green shadow hover:bg-accordianSelect border border-accordianSelect" onClick={ () => {
-                  console.log(`${item.card.info.name} Button Clicked`);
+                  // console.log(`${item.card.info.name} Button Clicked`);
+                  handleClick(item)
                 }}>
                   ADD
                 </button>

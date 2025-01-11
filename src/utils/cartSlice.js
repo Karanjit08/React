@@ -5,7 +5,7 @@ var cartSlice = createSlice(
     {
         name : 'cart',
         initialState : {
-            items : ["Burger","Pizza"]
+            items : []
         },
         reducers : {
             addItem : (state,action) => {

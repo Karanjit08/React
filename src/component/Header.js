@@ -9,8 +9,10 @@ var Header = () => {
 
   var [buttonText, setButtonText] = useState("Login");
 
+
   var data = useContext(UserContext);
 
+    // SUBCRIBING THE STORE (LINE 15)& DISPLAYING IN CART HEADER (LINE 37)
   var cartItems = useSelector((store) => store.cart.items)
 
 
@@ -33,7 +35,7 @@ var Header = () => {
         <a className="text-[20px] font-normal "><Link to={"/"}>Home</Link></a>
         <a  className="text-[20px] font-normal "><Link to={"/about"}>About</Link></a>
         <a  className="text-[20px] font-normal "><Link to={"/contact"}>Contact Us</Link></a>
-        <a  className="text-[20px] font-normal ">Cart - ({cartItems.length} Items)</a>
+        <a  className="text-[20px] font-normal "><Link to={"/cart"}>Cart - ({cartItems.length} Items)</Link></a>
         <button className="py-0 px-3 cursor-pointer rounded-xl text-[20px] font-normal" onClick={() =>{
           console.log('Clicked...');
           setButtonText((prevText) => prevText == "Login" ? "Log Out" : "Login");
